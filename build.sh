@@ -1,11 +1,12 @@
 #!/bin/bash
-
+sudo apt update
+sudo apt install ccache -y
 # === SETUP VARIABLE ===
 kernel_dir="${PWD}"
 objdir="${kernel_dir}/out"
 builddir="${kernel_dir}/build"
-anykernel="/tmp/src/android/AnyKernel3"
-clang_repo="https://gitlab.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r547379.git"
+anykernel="/tmp/src/android/AnyKernel3"https://gitlab.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r547379.git
+clang_repo=""
 CLANG_DIR="/tmp/src/android/clang"
 GCC64_DIR="/tmp/src/android/gcc64/aarch64--glibc--stable-2025.08-1"
 GCC32_DIR="/tmp/src/android/gcc32"

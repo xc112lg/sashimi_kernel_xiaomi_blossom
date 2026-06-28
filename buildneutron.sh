@@ -1,5 +1,6 @@
 #!/bin/bash
-
+sudo apt update
+sudo apt install ccache -y
 # === SETUP VARIABLE ===
 kernel_dir="${PWD}"
 objdir="${kernel_dir}/out"
