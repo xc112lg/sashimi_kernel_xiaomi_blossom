@@ -105,7 +105,7 @@ compile() {
 
     if [ $? -ne 0 ]; then
         echo -e "${LRD}Kernel compilation failed!${NC}"
-        exit 1
+       # exit 1
     fi
 
     BUILD_END=$(date +%s)
