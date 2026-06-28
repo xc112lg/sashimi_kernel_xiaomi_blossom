@@ -129,10 +129,19 @@ completion() {
         echo -e "${LGR}############################################${NC}"
         echo -e "${LGR}Kernel Image: $image${NC}"
         
-        # Copy and rename to 'kernel' for Android build system
+        # Copy kernel
         echo -e "${LGR}Copying kernel to: $output_kernel${NC}"
         cp "$image" "$output_kernel"
-        echo -e "${LGR}Output: $output_kernel${NC}"
+        
+        # Compress with gzip (maximum compression)
+        echo -e "${LGR}Compressing kernel with gzip...${NC}"
+        gzip -9 -f "$output_kernel"
+        
+        # Rename from kernel.gz back to kernel (bootloader detects compression by magic bytes)
+        mv "${output_kernel}.gz" "$output_kernel"
+        
+        echo -e "${LGR}Output: $output_kernel (gzip compressed)${NC}"
+        ls -lh "$output_kernel"
     else
         echo -e "${LRD}############################################"
         echo -e "${LRD}##      Kernel build failed :'(           ##"
