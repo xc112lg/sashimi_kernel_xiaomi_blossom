@@ -121,7 +121,7 @@ compile() {
 # === FUNCTION: Check output ===
 completion() {
     local image="${objdir}/arch/arm64/boot/Image"
-    local output_kernel="${kernel_dir}/kernel"
+    local output_kernel="${kernel_dir}/kernel-Image"
 
     if [[ -f "$image" ]]; then
         echo -e "${LGR}############################################"
