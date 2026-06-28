@@ -4,12 +4,12 @@
 kernel_dir="${PWD}"
 objdir="${kernel_dir}/out"
 builddir="${kernel_dir}/build"
-anykernel="/root/AnyKernel3"
+anykernel="/tmp/src/android//AnyKernel3"
 clang_repo="https://gitlab.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r547379.git"
-CLANG_DIR="/root/clang"
-GCC64_DIR="/root/gcc64/aarch64--glibc--stable-2025.08-1"
-GCC32_DIR="/root/gcc32"
-TC_DIR="/root"
+CLANG_DIR="/tmp/src/android//clang"
+GCC64_DIR="/tmp/src/android//gcc64/aarch64--glibc--stable-2025.08-1"
+GCC32_DIR="/tmp/src/android//gcc32"
+TC_DIR="/tmp/src/android/"
 CONFIG_FILE="blossom_defconfig"
 
 # === ENVIRONMENT EXPORT ===
