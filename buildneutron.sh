@@ -11,7 +11,9 @@ GCC64_DIR="/tmp/src/android/gcc64/aarch64--glibc--stable-2025.08-1"
 GCC32_DIR="/tmp/src/android/gcc32"
 TC_DIR="/tmp/src/android/"
 CONFIG_FILE="blossom_defconfig"
-
+mkdir tmp
+export CCACHE_DIR=tmp
+export USE_CCACHE=1
 # === ENVIRONMENT EXPORT ===
 export ARCH="arm64"
 export KBUILD_BUILD_USER="t.me"
