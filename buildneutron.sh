@@ -121,7 +121,12 @@ compile() {
 # === FUNCTION: Check output ===
 completion() {
     local image="${objdir}/arch/arm64/boot/Image"
-    local output_kernel="${kernel_dir}/kernel-Image"
+    local output_dir="${kernel_dir}/newkernel"
+    local output_kernel="${output_dir}/kernel"
+    local root_kernel="${kernel_dir}/kernel"
+
+    # Create output directory if it doesn't exist
+    mkdir -p "$output_dir"
 
     if [[ -f "$image" ]]; then
         echo -e "${LGR}############################################"
@@ -129,7 +134,7 @@ completion() {
         echo -e "${LGR}############################################${NC}"
         echo -e "${LGR}Kernel Image: $image${NC}"
         
-        # Copy kernel
+        # Copy kernel to newkernel folder
         echo -e "${LGR}Copying kernel to: $output_kernel${NC}"
         cp "$image" "$output_kernel"
         
@@ -140,8 +145,14 @@ completion() {
         # Rename from kernel.gz back to kernel (bootloader detects compression by magic bytes)
         mv "${output_kernel}.gz" "$output_kernel"
         
-        echo -e "${LGR}Output: $output_kernel (gzip compressed)${NC}"
-        ls -lh "$output_kernel"
+        # Also copy to root for Android build system
+        echo -e "${LGR}Copying kernel to root: $root_kernel${NC}"
+        cp "$output_kernel" "$root_kernel"
+        
+        echo -e "${LGR}Output locations:${NC}"
+        echo -e "${LGR}  - $output_kernel${NC}"
+        echo -e "${LGR}  - $root_kernel${NC}"
+        ls -lh "$output_kernel" "$root_kernel"
     else
         echo -e "${LRD}############################################"
         echo -e "${LRD}##      Kernel build failed :'(           ##"
