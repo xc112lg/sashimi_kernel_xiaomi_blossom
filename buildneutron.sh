@@ -49,6 +49,13 @@ echo -e "${LGR}Cleaning previous build...${NC}"
 rm -rf "$objdir"
 mkdir -p "$objdir"
 
+# === CLEAN SOURCE TREE ===
+echo -e "${LGR}Cleaning source tree with make mrproper...${NC}"
+make mrproper
+if [ $? -ne 0 ]; then
+    echo -e "${LRD}Warning: make mrproper had issues, continuing...${NC}"
+fi
+
 # === REGENERATE DEFCONFIG IF NEEDED ===
 if [ "$VAYU_CONFIG_REGEN" = "true" ]; then
     echo -e "${LGR}Regenerating defconfig...${NC}"
