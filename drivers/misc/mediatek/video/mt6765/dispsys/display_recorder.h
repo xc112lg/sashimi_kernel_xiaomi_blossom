@@ -29,6 +29,24 @@ enum DPREC_LOGGER_PR_TYPE {
 	DPREC_LOGGER_STATUS,
 };
 
+/* Forward declaration and struct definition for dprec_logger_event */
+struct dprec_logger {
+	unsigned long long period_frame;
+	unsigned long long period_total;
+	unsigned long long period_max_frame;
+	unsigned long long period_min_frame;
+	unsigned long long ts_start;
+	unsigned long long ts_trigger;
+	unsigned long long count;
+};
+
+struct dprec_logger_event {
+	int8_t name[24];
+	unsigned int mmp;
+	uint32_t level;
+	struct dprec_logger logger;
+};
+
 extern unsigned int gCapturePriLayerEnable;
 extern unsigned int gCaptureWdmaLayerEnable;
 extern unsigned int gCaptureRdmaLayerEnable;
