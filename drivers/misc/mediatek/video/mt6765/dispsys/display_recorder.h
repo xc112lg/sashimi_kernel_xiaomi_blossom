@@ -40,6 +40,15 @@ struct dprec_logger {
 	unsigned long long count;
 };
 
+struct fpsEx {
+	unsigned long long fps;
+	unsigned long long fps_low;
+	unsigned long long count;
+	unsigned long long avg;
+	unsigned long long max_period;
+	unsigned long long min_period;
+};
+
 struct dprec_logger_event {
 	int8_t name[24];
 	unsigned int mmp;
