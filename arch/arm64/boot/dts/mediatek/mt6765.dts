@@ -26,11 +26,10 @@
 
 	/* chosen */
 	chosen: chosen {
-		bootargs = "vmalloc=400M \
-quiet nodebugmon \
-swiotlb=noforce androidboot.hardware=mt6765 \
+		bootargs = "console=ttyS0,921600n1 vmalloc=400M quiet loglevel=0 systemd.show_status=0 udev.log_level=0 \
+swiotlb=noforce \
+androidboot.hardware=mt6765 \
 maxcpus=8 \
-pstore.update_ms=1000 \
 firmware_class.path=/vendor/firmware";
 		kaslr-seed = <0 0>;
 	};
