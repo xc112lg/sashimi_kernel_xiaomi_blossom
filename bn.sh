@@ -14,11 +14,11 @@ fi
 kernel_dir="${PWD}"
 objdir="${kernel_dir}/out"
 builddir="${kernel_dir}/build"
-anykernel="/tmp/src/android/AnyKernel3"
-CLANG_DIR="/home/xc/neutron-clang"
-GCC64_DIR="/tmp/src/android/gcc64/aarch64--glibc--stable-2025.08-1"
-GCC32_DIR="/tmp/src/android/gcc32"
-TC_DIR="/tmp/src/android/"
+anykernel=" ~/workspaces/AnyKernel3"
+CLANG_DIR=" ~/workspaces/neutron-clang"
+GCC64_DIR=" ~/workspaces/gcc64/aarch64--glibc--stable-2025.08-1"
+GCC32_DIR=" ~/workspaces/gcc32"
+TC_DIR=" ~/workspaces/"
 CONFIG_FILE="blossom_defconfig"
 mkdir -p tmp
 export CCACHE_DIR=tmp
@@ -29,7 +29,7 @@ export KBUILD_BUILD_USER="t.me"
 export KBUILD_BUILD_HOST="AnymoreProject"
 export PATH="$CLANG_DIR/bin:$GCC64_DIR/bin:$GCC32_DIR/bin:$PATH"
 export CCACHE=$(command -v ccache)
-export CCACHE_DIR="/home/xc/ccache"
+export CCACHE_DIR="~/workspaces/ccache"
 
 # === COLOR CODES ===
 NC='\033[0m'
