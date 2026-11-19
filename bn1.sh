@@ -14,11 +14,11 @@ fi
 kernel_dir="${PWD}"
 objdir="${kernel_dir}/out"
 builddir="${kernel_dir}/build"
-anykernel="/serverhive4/xc112lg/AnyKernel3"
-CLANG_DIR="/serverhive4/xc112lg/neutron-clang"
-GCC64_DIR="/serverhive4/xc112lg/gcc64/aarch64--glibc--stable-2025.08-1"
-GCC32_DIR="/serverhive4/xc112lg/gcc32"
-TC_DIR="/serverhive4/xc112lg/"
+anykernel="/home/ubuntu/AnyKernel3"
+CLANG_DIR="/home/ubuntu/neutron-clang"
+GCC64_DIR="/home/ubuntu/gcc64/aarch64--glibc--stable-2025.08-1"
+GCC32_DIR="/home/ubuntu/gcc32"
+TC_DIR="/home/ubuntu/"
 CONFIG_FILE="blossom_defconfig"
 mkdir -p tmp
 export CCACHE_DIR=tmp
@@ -29,7 +29,7 @@ export KBUILD_BUILD_USER="t.me"
 export KBUILD_BUILD_HOST="AnymoreProject"
 export PATH="$CLANG_DIR/bin:$GCC64_DIR/bin:$GCC32_DIR/bin:$PATH"
 export CCACHE=$(command -v ccache)
-export CCACHE_DIR="/serverhive4/xc112lg/ccache"
+export CCACHE_DIR="/home/ubuntu/ccache"
 
 # === COLOR CODES ===
 NC='\033[0m'
