@@ -14,11 +14,11 @@ fi
 kernel_dir="${PWD}"
 objdir="${kernel_dir}/out"
 builddir="${kernel_dir}/build"
-anykernel="/home/ubuntu/AnyKernel3"
-CLANG_DIR="/home/ubuntu/neutron-clang"
-GCC64_DIR="/home/ubuntu/gcc64/aarch64--glibc--stable-2025.08-1"
-GCC32_DIR="/home/ubuntu/gcc32"
-TC_DIR="/home/ubuntu/"
+anykernel="/workspacesAnyKernel3"
+CLANG_DIR="/workspacesneutron-clang"
+GCC64_DIR="/workspacesgcc64/aarch64--glibc--stable-2025.08-1"
+GCC32_DIR="/workspacesgcc32"
+TC_DIR="/workspaces"
 CONFIG_FILE="blossom_defconfig"
 mkdir -p tmp
 export CCACHE_DIR=tmp
@@ -29,7 +29,7 @@ export KBUILD_BUILD_USER="t.me"
 export KBUILD_BUILD_HOST="AnymoreProject"
 export PATH="$CLANG_DIR/bin:$GCC64_DIR/bin:$GCC32_DIR/bin:$PATH"
 export CCACHE=$(command -v ccache)
-export CCACHE_DIR="/home/ubuntu/ccache"
+export CCACHE_DIR="/workspacesccache"
 
 # === COLOR CODES ===
 NC='\033[0m'
