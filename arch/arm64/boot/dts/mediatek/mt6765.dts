@@ -26,9 +26,9 @@
 
 	/* chosen */
 	chosen: chosen {
-		bootargs = "console=ttyS0,921600n1 vmalloc=400M quiet loglevel=0 systemd.show_status=0 udev.log_level=0 \
-swiotlb=noforce \
-androidboot.hardware=mt6765 \
+		bootargs = "console=tty0 console=ttyS0,921600n1 vmalloc=400M \
+page_owner=on \
+swiotlb=noforce androidboot.hardware=mt6765 \
 maxcpus=8 \
 firmware_class.path=/vendor/firmware";
 		kaslr-seed = <0 0>;
